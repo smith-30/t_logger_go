@@ -76,6 +76,9 @@ func Test_handler_Do(t *testing.T) {
 
 			for idx, logs := range recorded.All() {
 				t.Logf("%v\n", logs.Message)
+				if tt.fields[idx].msg != logs.Message {
+					t.Errorf("\n exp %#v\nact %#v\n", tt.fields[idx].msg, logs.Message)
+				}
 
 				for i, log := range logs.Context {
 					if !reflect.DeepEqual(log, tt.fields[idx].params[i]) {
