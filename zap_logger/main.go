@@ -17,4 +17,10 @@ func main() {
 		Name: "Obj",
 	}
 	h.Do(o)
+
+	// Output is ...
+
+	// {"level":"info","ts":1529129195.434518,"caller":"sample/main.go:27","msg":"Did Int","param":1111}
+	// {"level":"info","ts":1529129195.434567,"caller":"sample/main.go:29","msg":"Did String","param":"ok"}
+	// {"level":"info","ts":1529129195.4345996,"caller":"sample/main.go:31","msg":"Did Any","param":{"id":1,"name":"Obj"}}
 }
